@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './shared';
 import { TaskModule } from './pages/task/task.module';
+import { NewModule } from './pages/new/new.module';
+import { TodoComponent } from './pages/todo/todo.component';
+import { TodoModule } from './pages/todo/todo.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,8 @@ import { TaskModule } from './pages/task/task.module';
     BrowserModule,
     AppRoutingModule,
     ComponentsModule,
-    TaskModule
+    NewModule,
+    TodoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

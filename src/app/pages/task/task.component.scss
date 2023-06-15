@@ -1,0 +1,14 @@
+.app-flex{
+  display: flex;
+
+
+  &__item{
+    width: 50%;
+    margin-right: 5px;
+  }
+}
+
+.app-button{
+  margin-top: 10px;
+  width: 100%;
+}

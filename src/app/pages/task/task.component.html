@@ -1,1 +1,20 @@
-<p>task works!</p>
+<form action="" [formGroup]="formGroup" (submit)="onAdd()">
+  <app-form-field [control]="formGroup.controls['taskTitle']">
+    <app-input formControlName="taskTitle" [placeHolder]="'Add new task ...'"></app-input>
+  </app-form-field>
+  <app-form-field [label]="'Description'" [control]="formGroup.controls['description']">
+    <app-text-area formControlName="description" ></app-text-area>
+  </app-form-field>
+  <div class="app-flex">
+    <app-form-field class="app-flex__item" [label]="'Due Date'" [control]="formGroup.controls['dueDate']">
+      <app-date [minDate]="today" formControlName="dueDate" ></app-date>
+    </app-form-field>
+    <app-form-field class="app-flex__item" [label]="'Priority'" [control]="formGroup.controls['priority']">
+      <app-selection formControlName="priority" [items]="priorities" ></app-selection>
+    </app-form-field>
+  </div>
+  <button class="app-button app-button__secondary"  type="submit">
+    Add Task
+  </button>
+</form>
+

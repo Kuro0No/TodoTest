@@ -10,6 +10,9 @@ import { FormFieldComponent } from './form-field.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    FormFieldComponent
   ]
 })
 export class FormFieldModule { }

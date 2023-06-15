@@ -1,0 +1,5 @@
+<select class="app-selection" [disabled]="isDisabled" (change)="onChanged($event)" (blur)="onBlur()">
+  <option *ngFor="let item of items" [value]="item.value">
+    {{item.label}}
+  </option>
+</select>

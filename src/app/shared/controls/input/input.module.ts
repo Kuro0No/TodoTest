@@ -9,7 +9,10 @@ import { InputComponent } from './input.component';
     InputComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+  ],
+  exports: [
+    InputComponent
   ]
 })
 export class InputModule { }

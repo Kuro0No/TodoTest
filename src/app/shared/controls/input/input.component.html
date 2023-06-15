@@ -1,1 +1,2 @@
-<p>input works!</p>
+<input type="text" class="app-input" [value]="value" [placeholder]="placeHolder || ''"
+    [attr.disabled]="isDisabled ? true : null" (input)="onInputChange($event)" (blur)="onBlur()">

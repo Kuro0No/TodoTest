@@ -1,2 +1,5 @@
 export * from './controls.module'
 export * from './input/input.module'
+export * from './form-field/form-field.module'
+export * from './text-area/text-area.module'
+export * from './date/date.module'

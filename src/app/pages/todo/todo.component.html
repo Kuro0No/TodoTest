@@ -1,0 +1,4 @@
+<app-input [placeHolder]="'Search ...'"></app-input>
+<div *ngFor="let item of taskList$ | async">
+  <app-task-detail [task]="item"></app-task-detail>
+</div>

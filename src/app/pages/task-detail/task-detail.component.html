@@ -1,0 +1,14 @@
+<div class="app-page">
+  <div class="app-flex">
+    <div class="app-flex">
+      <input class="checkbox" type="checkbox" name="" id="" />
+      <div class="task-name">{{task.taskTitle}}</div>
+    </div>
+    <div>
+      <button class="app-button app-button__primary" (click)="showDetail()" type="button">Detail</button>
+      <button class="app-button app-button__danger" type="button">Remove</button>
+    </div>
+  </div>
+  <app-task *ngIf="isShowDetail"></app-task>
+</div>
+
