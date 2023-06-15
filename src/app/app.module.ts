@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './shared';
+import { TaskModule } from './pages/task/task.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { ComponentsModule } from './shared';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    TaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]

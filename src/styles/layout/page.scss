@@ -1,13 +1,12 @@
 .app-page {
     max-width: 900px;
-    margin: 16px auto;
-
     background: $base-light;
     border: 1px solid $base-dark;
     border-radius: 8px;
     padding: 32px;
-
+    width: 100%;
     position: relative;
+    margin: 0 5px;
 
     &__header {
         margin-bottom: 32px;

@@ -1,0 +1,16 @@
+<div class="form-field" [class.form-field_error]="hasError()">
+  <label for="" class="form-field__label">
+      {{ label }}
+  </label>
+  <div class="form-field__control">
+      <ng-content></ng-content>
+      <ng-container *ngIf="control && errorKey" [ngSwitch]="errorKey">
+        <small *ngSwitchCase="'required'" class="p-error">This field is required</small>
+        <small *ngSwitchCase="'maxlength'" class="p-error">No more than {{control.errors ? control.errors[errorKey].requiredLength : ''}} character</small>
+        <small *ngSwitchCase="'minlength'" class="p-error">At least {{control.errors ? control.errors[errorKey].requiredLength : ''}} character</small>
+        <small *ngSwitchCase="'min'" class="p-error">Minimum is  {{control.errors ? control.errors[errorKey].min : ''}}</small>
+        <small *ngSwitchCase="'max'" class="p-error">Maximum is {{control.errors ? control.errors[errorKey].max : ''}} character</small>
+        <small *ngSwitchCase="'isMatched'" class="p-error">Không thể chọn giá trị này</small>
+    </ng-container>
+  </div>
+</div>

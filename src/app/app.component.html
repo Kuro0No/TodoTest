@@ -1,1 +1,23 @@
 <app-header></app-header>
+<div class="container">
+  <div class="app-page">
+    <div class="app-page__header">
+        New Task
+    </div>
+    <div class="app-page__content">
+      <app-task></app-task>
+    </div>
+  </div>
+  <div class="app-page">
+    <div class="app-page__header">
+        To Do List
+    </div>
+    <div class="app-page__content">
+        <div class="navigation">
+            <a [routerLink]="['./styles']" routerLinkActive="app-a_active" class="app-a" >Styles</a>
+            <a [routerLink]="['./shared']" routerLinkActive="app-a_active" class="app-a">Shared</a>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
