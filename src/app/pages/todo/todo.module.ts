@@ -4,6 +4,7 @@ import { TodoComponent } from './todo.component';
 import { InputModule } from '@app/shared';
 import { TaskDetailModule } from '../task-detail/task-detail.module';
 import { TaskService } from '@app/services/task.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -14,7 +15,9 @@ import { TaskService } from '@app/services/task.service';
   imports: [
     CommonModule,
     InputModule,
-    TaskDetailModule
+    TaskDetailModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     TodoComponent

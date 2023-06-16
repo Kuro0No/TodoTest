@@ -1,4 +1,4 @@
-<form action="" [formGroup]="formGroup" (submit)="onAdd()">
+<form action="" [formGroup]="formGroup" (submit)="onSubmit()">
   <app-form-field [control]="formGroup.controls['taskTitle']">
     <app-input formControlName="taskTitle" [placeHolder]="'Add new task ...'"></app-input>
   </app-form-field>
@@ -13,7 +13,7 @@
       <app-selection formControlName="priority" [items]="priorities" ></app-selection>
     </app-form-field>
   </div>
-  <button class="app-button app-button__secondary"  type="submit">
+  <button class="app-button app-button__secondary" type="submit">
     Add Task
   </button>
 </form>

@@ -18,6 +18,10 @@ export class AppComponent implements OnInit  {
   ngOnInit(): void {
     let tasks = this.storage.getStorage('Task')
     this.taskService.getAllTask(tasks)
+    this.taskService.tasks$.subscribe(response => {
+      console.log(response);
+
+    })
   }
 
 

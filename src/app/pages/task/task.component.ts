@@ -1,10 +1,11 @@
 import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ControlItem } from '@app/models';
 import { TaskModel } from '@app/models/task';
 import { TaskService } from '@app/services/task.service';
 
+export type Mode = 'update' | 'add';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
@@ -12,6 +13,9 @@ import { TaskService } from '@app/services/task.service';
   providers: [DatePipe]
 })
 export class TaskComponent implements OnInit {
+
+  @Input() taskDetail: TaskModel = new TaskModel();
+  @Input() mode: Mode = 'add';
 
   today = this.datePipe.transform(new Date(), 'yyyy-MM-dd')
 
@@ -38,25 +42,31 @@ export class TaskComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-    this.initForm()
+    this.initForm(this.taskDetail)
 
   }
 
-  initForm(){
+  initForm(taskDetail: TaskModel){
     this.formGroup = this.fb.group({
-      taskTitle: ['', Validators.required],
-      description: ['', Validators.required],
-      dueDate: ['', Validators.required],
-      priority: []
+      id: [taskDetail.id],
+      taskTitle: [taskDetail.taskTitle, Validators.required],
+      description: [taskDetail.description, Validators.required],
+      dueDate: [taskDetail.dueDate, Validators.required],
+      priority: [taskDetail.priority],
+      isChecked: [taskDetail.isChecked]
     })
   }
 
-  onAdd(){
+  onSubmit(){
     if(this.formGroup.invalid){
       this.formGroup.markAllAsTouched()
     }else{
-      let newTask = new TaskModel(this.formGroup.getRawValue());
-      this.taskService.addTask(newTask);
+      if(this.mode === 'update'){
+        this.taskService.updateTask(this.formGroup.getRawValue())
+      }else{
+        let newTask = new TaskModel(this.formGroup.getRawValue());
+        this.taskService.addTask(newTask);
+      }
     }
 
 

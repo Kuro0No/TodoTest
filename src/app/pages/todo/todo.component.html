@@ -1,4 +1,13 @@
-<app-input [placeHolder]="'Search ...'"></app-input>
-<div *ngFor="let item of taskList$ | async">
+<app-input [placeHolder]="'Search ...'" [formControl]="searchControl"></app-input>
+<div *ngFor="let item of taskList">
   <app-task-detail [task]="item"></app-task-detail>
+</div>
+<div class="app-page app-flex" *ngIf="isBulkAction">
+  <div>
+    Bulk Action:
+  </div>
+  <div>
+    <button class="app-button app-button__primary" type="button">Done</button>
+    <button class="app-button app-button__danger" (click)="bulkRemove()" type="button">Remove</button>
+  </div>
 </div>

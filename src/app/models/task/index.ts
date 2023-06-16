@@ -7,6 +7,7 @@ export interface ITaskModel{
   description: string;
   dueDate: string;
   priority: Priority;
+  isChecked: boolean
 }
 
 export class TaskModel implements ITaskModel{
@@ -15,6 +16,7 @@ export class TaskModel implements ITaskModel{
   description: string = ''
   dueDate: string = ''
   priority: Priority = 'normal'
+  isChecked: boolean = false
 
   constructor(data?: ITaskModel){
     this.id = uuidv4();
@@ -22,6 +24,7 @@ export class TaskModel implements ITaskModel{
     this.description = data?.description || '';
     this.dueDate = data?.dueDate || '';
     this.priority = data?.priority || 'low' ;
+    this.isChecked = data?.isChecked || false;
     return this;
   }
 }

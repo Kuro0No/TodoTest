@@ -10,7 +10,6 @@
         <small *ngSwitchCase="'minlength'" class="p-error">At least {{control.errors ? control.errors[errorKey].requiredLength : ''}} character</small>
         <small *ngSwitchCase="'min'" class="p-error">Minimum is  {{control.errors ? control.errors[errorKey].min : ''}}</small>
         <small *ngSwitchCase="'max'" class="p-error">Maximum is {{control.errors ? control.errors[errorKey].max : ''}} character</small>
-        <small *ngSwitchCase="'isMatched'" class="p-error">Không thể chọn giá trị này</small>
     </ng-container>
   </div>
 </div>
